@@ -1,2 +1,6 @@
-# sensor-de-re
-Um sensor de ré desenvolvido com Arduino Uno
+# Sensor de ré
+
+Um sensor ultrassônico com avisos sonoros e luminosos controlado por infravermelho
+
+
+![sensor](http://i63.tinypic.com/f4458g.jpg)
