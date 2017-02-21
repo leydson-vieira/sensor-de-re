@@ -10,13 +10,12 @@ int RECV_PIN = 8;
 
 int distancia;
 
-
 IRrecv irrecv(RECV_PIN);
 
 decode_results results;
 
-void setup()
-{
+void setup() {
+
   Serial.begin(9600);
   pinMode(ledvermPin, OUTPUT);
   pinMode(ledverdPin, OUTPUT);
@@ -73,8 +72,9 @@ void loop() {
 }
 
 void desarma() {
-  
+
   digitalWrite(ledvermPin, LOW);
   digitalWrite(ledverdPin, LOW);
   digitalWrite(buzzPin, LOW);
+
 }
