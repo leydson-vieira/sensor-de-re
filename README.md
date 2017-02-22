@@ -3,4 +3,4 @@
 Um sensor ultrassônico com avisos sonoros e luminosos controlado por infravermelho
 
 
-![sensor](http://i63.tinypic.com/f4458g.jpg)
+![sensor](http://i64.tinypic.com/29o4c3t.jpg)
