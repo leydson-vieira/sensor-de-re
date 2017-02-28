@@ -40,7 +40,6 @@ void setup()
   irrecv.enableIRIn(); // Start the receiver
 
   lcd.init();                      // Iniciando o lcd
-  lcd.init();
   lcd.backlight();
   lcd.setCursor(3,0);
   
