@@ -21,7 +21,6 @@ const int buzzPin = 2;
 const int distanciaAlarme = 15;
 int RECV_PIN = 8;
 
-
 int distancia; // Valor recebido do sensur ultrassônico
 
 LiquidCrystal_I2C lcd(0x27,20,4);  // Seta o endereço do display de 16 colunas e 2 linhas.
@@ -41,12 +40,10 @@ void setup()
 
   lcd.init();                      // Iniciando o lcd
   lcd.backlight();
-  lcd.setCursor(3,0);
-  
+  lcd.setCursor(3,0);  
 }
 
 void loop() {
-   
    
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -74,36 +71,31 @@ void loop() {
   }
   
   if (results.value == 0xFFC23D) {
-    lcd.setCursor(0.1);
-   lcd.print("Ativ.");    
-   if (distancia < distanciaAlarme) {
-       
-     digitalWrite(ledverdPin, LOW);    
-     digitalWrite(ledvermPin, HIGH);
-     digitalWrite(buzzPin, HIGH);
-     delay(distancia*100-50);
-     digitalWrite(ledvermPin, LOW);
-     digitalWrite(buzzPin, LOW);
-    
-  } else {
-    
-    digitalWrite(ledvermPin, LOW);
-    digitalWrite(ledverdPin, HIGH);
-    
-  }
- 
- } else {
+     lcd.setCursor(0.1);
+     lcd.print("Ativ.");    
+     if (distancia < distanciaAlarme) {
 
-   lcd.setCursor(0.1);
-   lcd.print("Desativ.");
-   desarma();
-   
- }
- 
-}
+         digitalWrite(ledverdPin, LOW);    
+         digitalWrite(ledvermPin, HIGH);
+         digitalWrite(buzzPin, HIGH);
+         delay(distancia*100-50);
+         digitalWrite(ledvermPin, LOW);
+         digitalWrite(buzzPin, LOW);
+
+      } else {
+        digitalWrite(ledvermPin, LOW);
+        digitalWrite(ledverdPin, HIGH);
+      }
+
+   } else {
+     lcd.setCursor(0.1);
+     lcd.print("Desativ.");
+     desarma();
+   }
+
+  }
 
 void desarma() {
-  
   digitalWrite(ledvermPin, LOW);
   digitalWrite(ledverdPin, LOW);
   digitalWrite(buzzPin, LOW);
